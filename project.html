@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Center container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set height to viewport height */
+        }
+
+        /* Main content styles */
+        .content {
+            max-width: 800px; /* Limit width of content */
+            width: 100%;
+            padding: 20px;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: row; /* Display images side by side */
+            align-items: center; /* Align items vertically in the center */
+        }
+
+        .shape,
+        .boy {
+            width: 40%;
+            height: auto;
+            margin-right: 20px; /* Add some spacing between the images */
+        }
+
+        /* Navigation bar styles */
+        /* Navigation bar styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7); /* Transparent black background */
+    padding: 10px 20px;
+}
+
+
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Hamburger button styles */
+        .hamburger {
+            display: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Media query for mobile view */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .navbar.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar a {
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .container {
+                margin-top: 50px;
+            }
+
+            .special-menu__cards {
+                width: 90%;
+            }
+        }
+
+        /* Skill bar styles */
+        .skill-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;/* Add space between sections */
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar-inner {
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+
+        .skill-bar-inner span {
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+
+        /* About Me section effects */
+        .about-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .about-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Circular image */
+        .profile-image {
+            border-radius: 50%; /* Make the image circular */
+        }
+  .contact-us {
+  background-color: #;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.info i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-info, .contact-form {
+  animation: slideIn 1s forwards;
+  animation-delay: 0.5s;
+}
+  .project {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.project a {
+  margin: 0 10px; /* Adjust the spacing between links */
+  color: #fff;
+  text-decoration: none;
+}
+
+.project a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+.special-menu {
+    padding: 70px 60px;
+}
+
+.special-menu h1 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 45px;
+    text-align: center;
+}
+
+.bestfood-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.special-menu__cards {
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 7.5px 22.5px 6px #868282;
+    transition: all 0.3s ease-in-out;
+}
+
+.special-menu__cards:hover {
+    color: #f5f0f0;
+    transform: scale(1.05);
+    -moz-box-shadow: 0 7.5px 22.5px 6px #f2f2f2;
+    box-shadow: 0 7.5px 22.5px 6px #3b3a3a;
+}
+
+.special-menu__cards:hover .backgroundEffect {
+    bottom: 0;
+    height: 165px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: rgb(0, 0, 0);
+}
+
+.special-menu__cards img {
+    height: 220px;
+    width: 100%;
+}
+
+.special-menu__cards-info {
+    padding: 1rem;
+    position: relative;
+}
+
+.special-menu__cards-info h2 {
+    font-size: 1.2rem;
+}
+
+.special-menu__cards-info p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.special-menu__cards-info a {
+    text-underline-offset: 5px;
+    color: #2a2a2a;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.special-menu__cards:hover .special-menu__cards-info a {
+    color: #fff;
+}
+  /* Center container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* Main content styles */
+.content {
+  max-width: 800px; /* Limit width of content */
+  width: 100%;
+  padding: 20px;
+  text-align: center; /* Center text */
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto; /* Reset height for mobile view */
+    padding: 20px; /* Add some vertical padding */
+  }
+
+  .content {
+    padding: 0; /* Reset padding for mobile view */
+  }
+
+  .special-menu__cards {
+    width: 100%; /* Make cards full width on mobile view */
+  }
+  /* Media query for laptop view */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 50px; /* Adjust horizontal padding */
+  }
+}
+
+/* Media query for tablet view */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 30px; /* Adjust horizontal padding */
+  }
+  
+  .special-menu__cards {
+    width: 100%; /* Make cards full width on tablet view */
+  }
+}
+
+}
+
+  
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="content">
+        <header class="header">
+            <a href="#" class="logo">CALDAMO.</a>
+            <div class="hamburger" id="hamburger">
+                <i class='bx bx-menu'></i>
+            </div>
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Me</a>
+                <a href="project.html">Project</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <section id="bestfood" class="special-menu">
+        <div class="bestfood-container">
+            <h1 class="bestfood-title">My Projects</h1>
+            <div class="bestfood-row">
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="jumb.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>jumbotron</h2>
+                            <p>Make More Highlights.</p>
+                            <a href="https://caldamo04.github.io/Images-jumbotron-/">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="story.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>Typhography</h2>
+                            <p>This is the story i made.</p>
+                            <a href="https://caldamo04.github.io/MY-CHILDREN-STORY/">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="grid.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>System Grid</h2>
+                            <p>A system grid that uses responsive design.</p>
+                            <a href="https://caldamo04.github.io/Grid-System/">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="columns.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>Columns</h2>
+                            <p>Adjust ever columns.</p>
+                            <a href="https://caldamo04.github.io/Columns-/">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="table.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>Responsive Table</h2>
+                            <p>A responsive table list with customers orders.</p>
+                            <a href=" https://caldamo04.github.io/Responsive-Menu-Tables/">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="special-menu__cards">
+                        <div class="backgroundEffect"></div>
+                        <img class="img-fluid" src="landing.jpg" alt="veggies">
+                        <div class="special-menu__cards-info">
+                            <h2>Landing Page</h2>
+                            <p>My landing Page Need more improvements.</p>
+                            <a href="https://caldamo04.github.io/final-project./">View Project > </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+              
+              
+            </body>
+          </html>
+            

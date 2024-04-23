@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Center container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set height to viewport height */
+        }
+
+        /* Main content styles */
+        .content {
+            max-width: 800px; /* Limit width of content */
+            width: 100%;
+            padding: 20px;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: row; /* Display images side by side */
+            align-items: center; /* Align items vertically in the center */
+        }
+
+        .shape,
+        .boy {
+            width: 40%;
+            height: auto;
+            margin-right: 20px; /* Add some spacing between the images */
+        }
+
+        /* Navigation bar styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Hamburger button styles */
+        .hamburger {
+            display: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Media query for mobile view */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .navbar.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar a {
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Skill bar styles */
+        .skill-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px; /* Add space between sections */
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar-inner {
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+
+        .skill-bar-inner span {
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+
+        /* About Me section effects */
+        .about-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .about-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Circular image */
+        .profile-image {
+            border-radius: 50%; /* Make the image circular */
+        }
+  /* About Me section styles */
+.about {
+    margin-bottom: 30px;
+}
+  .warlito{
+    text-align: center;
+  }
+  
+  /* Center container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* Main content styles */
+.content {
+  max-width: 800px; /* Limit width of content */
+  width: 100%;
+  padding: 20px;
+  text-align: center; /* Center text */
+}
+
+.images {
+  display: flex;
+  flex-direction: row; /* Display images side by side */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.shape,
+.boy {
+  width: 40%;
+  height: auto;
+  margin-right: 20px; /* Add some spacing between the images */
+}
+
+
+/* Navigation bar styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7); /* Transparent black background */
+    padding: 10px 20px;
+}
+
+
+
+.logo {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+/* Hamburger button styles */
+.hamburger {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto; /* Reset height for mobile view */
+    padding: 20px; /* Add some vertical padding */
+  }
+
+  .content {
+    padding: 0; /* Reset padding for mobile view */
+  }
+
+  .images {
+    flex-direction: column; /* Display images in a column */
+  }
+
+  .shape,
+  .boy {
+    width: 100%; /* Make images full width on mobile view */
+    margin-right: 0;
+  }
+
+  .navbar {
+    flex-direction: column; /* Display navbar items in a column */
+    width: 100%; /* Make navbar full width on mobile view */
+  }
+
+  .navbar a {
+    padding: 10px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Skill bar styles */
+.skill-bar {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px; /* Add space between sections */
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-bar-inner {
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.skill-bar-inner span {
+  display: inline-block;
+  padding: 5px;
+  color: white;
+}
+
+/* About Me section effects */
+.about-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Circular image */
+.profile-image {
+  border-radius: 50%; /* Make the image circular */
+}
+
+/* About Me section styles */
+.about {
+  margin-bottom: 30px;
+}
+
+.warlito {
+  text-align: center;
+}
+  /* Media query for laptop view */
+@media screen and (max-width: 1024px) {
+  .content {
+    padding: 0 50px; /* Adjust horizontal padding */
+  }
+}
+
+/* Media query for tablet view */
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 0 30px; /* Adjust horizontal padding */
+  }
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 576px) {
+  .container {
+    height: auto; /* Reset height for mobile view */
+    padding: 20px; /* Add some vertical padding */
+  }
+
+  .content {
+    padding: 0; /* Reset padding for mobile view */
+  }
+
+  .images {
+    flex-direction: column; /* Display images in a column */
+  }
+
+  .shape,
+  .boy {
+    width: 100%; /* Make images full width on mobile view */
+    margin-right: 0;
+  }
+
+  .navbar {
+    flex-direction: column; /* Display navbar items in a column */
+    width: 100%; /* Make navbar full width on mobile view */
+  }
+
+  .navbar a {
+    padding: 10px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header class="header">
+                <a href="#" class="logo">CALDAMO.</a>
+                <div class="hamburger" id="hamburger">
+                    <i class='bx bx-menu'></i>
+                </div>
+                <nav class="navbar" id="navbar">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Me</a>
+                    <a href="project.html">Project</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </header>
+
+            <section class="about" id="about">
+                <div class="about-container">
+                    <table>
+                        <tr>
+                            <td>
+                                <center>
+                                    <img src="warlito.jpg" alt="" class="profile-image" style="width: 200px; height: 200px;">
+                                </center>
+                            </td>
+                            <td>
+                                <div class="about-content">
+                                    <h1 class="heading">About <span>Me</span></h1>
+                                    <h3>Frontend Developer</h3>
+                                    <p>I am a creative and dedicated web developer with a passion for building beautiful and functional websites. I have experience working with a variety of programming languages, frameworks, and tools, including HTML, CSS, JavaScript, React, Node.js, and Git. I am a quick learner and enjoy staying up-to-date with the latest web development trends and best practices.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Skill bars -->
+            <div class="skill">
+              <h1 class="warlito">My <span>Skills</span></h1>
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-inner" style="width: 80%;"><span>80%</span></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-inner" style="width: 70%;"><span>70%</span></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-inner" style="width: 60%;"><span>60%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+        const aboutContent = document.querySelector('.about-content');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Show About Me section when page loads
+        window.addEventListener('load', () => {
+            aboutContent.classList.add('show');
+        });
+  
+  
+    </script>
+</body>
+</html>

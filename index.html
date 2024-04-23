@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .images {
+            display: flex;
+            flex-direction: row; /* Display images side by side */
+            align-items: center; /* Align items vertically in the center */
+        }
+
+        .shape,
+        .boy {
+            width: 40%;
+            height: auto;
+            margin-right: 20px; /* Add some spacing between the images */
+        }
+
+        /* Navigation bar styles */
+        /* Navigation bar styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7); /* Transparent black background */
+    padding: 10px 20px;
+}
+
+
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Hamburger button styles */
+        .hamburger {
+            display: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Media query for laptop and tablet view */
+        @media screen and (max-width: 1024px) {
+            .shape,
+            .boy {
+                width: 100%; /* Adjust image width for tablet and laptop view */
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .navbar.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar a {
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">CALDAMO.</a>
+        <div class="hamburger" id="hamburger">
+            <i class='bx bx-menu'></i>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="project.html">Project</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+
+    <section class="home">
+        <div class="home-container">
+            <div class="home-content">
+                <h1>Hi, Im Warlito Caldamo</h1>
+                <h3>Frontend Developer</h3>
+                <p>Future Frontend Developer.</p>
+                <div class="btn-box">
+                    <a href="about.html">About Me</a>
+                    <a href="project.html">Project</a>
+                </div>
+            </div>
+            <div class="home-img">
+                <div class="glowing-circle"></div>
+            </div>
+        </div>
+        <div class="home-sci">
+            <a href="https://www.facebook.com/warlito.caldamo.5?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.instagram.com/_warliee?igsh=MXFwb3hiamR1MHNpaQ=="><i class='bx bxl-linkedin'></i></a>
+        </div>
+    </section>
+</body>
+</html>
